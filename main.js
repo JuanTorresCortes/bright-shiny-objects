@@ -29,6 +29,7 @@ function fixCar(car){
 function addGrades(student, grades){
     let newGrades = student.grades.concat(grades);
     student.grades = newGrades;
+    console.table(student)
     return student;
 }
 
@@ -38,6 +39,7 @@ return (typeof obj[key]);
 
 function addTodo(arr, item){
     let newArr = arr.concat(item);
+    console.table(newArr)
     return newArr;
 }
 
@@ -51,6 +53,7 @@ function addSong(playlist, song){
         newDuration += items.duration;
         playlist.duration = newDuration;
     }
+    console.table(playlist)
     return playlist;
 }
 
@@ -59,28 +62,24 @@ function updateReportCard(reportCard, grade){
     let allGradesAdded = 0;//>>308 type number
     
     let newGrades = reportCard.grades;// holds current grades>>[ 70, 96, 80, 62 ]
-    let allGrades = newGrades.push(grade)//adds the new grade >> 4
+    let gradeCount = newGrades.push(grade)//adds the new grade >> 4
     //console.log(reportCard.grades)
-    
-    
+     
     for(const grade of newGrades){// adds all grades 
         allGradesAdded += grade
     }
 
-    let newAverage = allGradesAdded / allGrades; //>> 77
+    let newAverage = allGradesAdded / gradeCount; //>> 77
+
     let biggestNum = Math.max(...newGrades);
     let smallestNum = Math.min(...newGrades);
-    // console.log(biggestNum);
-    // console.log(smallestNum); 
 
     reportCard.lowestGrade = smallestNum
     reportCard.highestGrade = biggestNum
     reportCard.averageGrade = newAverage
-    reportCard.grades = allGrades
-//console.log(allGradesAdded)
- //console.log(newGrades)
- 
- //console.log(newAverage)
+    reportCard.grades = newGrades
+
+ console.table(reportCard)
  return reportCard;
 }    
 

@@ -10,14 +10,14 @@ const {
     updateReportCard
 } = require('./main.js');
 
-test.only('createUser', function () {
+test('createUser', function () {
     expect(createUser('Mesi', 'Kaleziq')).toStrictEqual({
         firstName: 'Mesi',
         lastName: 'Kaleziq'
     });
 });
 
-test.only('setAge', function () {
+test('setAge', function () {
     const user = { 
         firstName: 'Tim',
         lastName: 'Horton'
@@ -29,7 +29,7 @@ test.only('setAge', function () {
     });
 });
 
-test.only('incrementAge', function () {
+test('incrementAge', function () {
     const user = {
         firstName: 'Tim',
         lastName: 'Horton',
@@ -42,7 +42,7 @@ test.only('incrementAge', function () {
     })
 });
 
-test.only('fixCar', function () {
+test('fixCar', function () {
     const car = {
         make: 'Ford',
         model: 'Mustang',
@@ -57,7 +57,7 @@ test.only('fixCar', function () {
     });
 });
 
-test.only('addGrades', function () {
+test('addGrades', function () {
     const student = {
         name: 'Anthony DeRosa',
         email: 'anthony.derosa@codeimmersives.com',
@@ -71,7 +71,7 @@ test.only('addGrades', function () {
     });
 });
 
-test.only('getDataType', function () {
+test('getDataType', function () {
     const car = {
         make: 'Ford',
         model: 'Mustang',
@@ -84,7 +84,7 @@ test.only('getDataType', function () {
     expect(getDataType(car, 'needsMaitenance')).toBe('boolean');
 });
 
-test.only('addTodo', function () {
+test('addTodo', function () {
     const todos = [
         { 
             title: 'Get gas', 
@@ -114,7 +114,7 @@ test.only('addTodo', function () {
     ]);
 });
 
-test.only('addSong', function () {
+test('addSong', function () {
     const playlist = {
         title: 'My jams',
         duration: 7,
@@ -159,7 +159,7 @@ test.only('addSong', function () {
     });
 });
 
-test.only('updateReportCard', function () {
+test('updateReportCard', function () {
     let reportCard = {
         lowestGrade: 70,
         highestGrade: 96,

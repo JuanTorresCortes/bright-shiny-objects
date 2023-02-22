@@ -2,6 +2,87 @@
 // │ Your code here! │
 // └─────────────────┘
 
+function createUser(firstName , lastName){
+    let user = {
+        firstName: firstName,
+        lastName: lastName
+    }
+    return user;
+}
+
+function setAge(user, age){
+   user.age = age
+  return user;
+}
+
+function incrementAge(user){
+    let newAge = user.age + 1;
+    user.age = newAge;
+    return user;
+}
+
+function fixCar(car){
+    car.needsMaintenance = false;
+    return car;
+}
+
+function addGrades(student, grades){
+    let newGrades = student.grades.concat(grades);
+    student.grades = newGrades;
+    return student;
+}
+
+function getDataType(obj, key){
+return (typeof obj[key]);
+}
+
+function addTodo(arr, item){
+    let newArr = arr.concat(item);
+    return newArr;
+}
+
+function addSong(playlist, song){
+    let arrOfSong = playlist.songs.concat(song);
+    playlist.songs = arrOfSong;
+
+    let newDuration = 0;
+
+    for(const items of arrOfSong){
+        newDuration += items.duration;
+        playlist.duration = newDuration;
+    }
+    return playlist;
+}
+
+function updateReportCard(reportCard, grade){
+    ///grade = 62
+    let allGradesAdded = 0;//>>308 type number
+    
+    let newGrades = reportCard.grades;// holds current grades>>[ 70, 96, 80, 62 ]
+    let allGrades = newGrades.push(grade)//adds the new grade >> 4
+    //console.log(reportCard.grades)
+    
+    
+    for(const grade of newGrades){// adds all grades 
+        allGradesAdded += grade
+    }
+
+    let newAverage = allGradesAdded / allGrades; //>> 77
+    let biggestNum = Math.max(...newGrades);
+    let smallestNum = Math.min(...newGrades);
+    // console.log(biggestNum);
+    // console.log(smallestNum); 
+
+    reportCard.lowestGrade = smallestNum
+    reportCard.highestGrade = biggestNum
+    reportCard.averageGrade = newAverage
+    reportCard.grades = allGrades
+//console.log(allGradesAdded)
+ //console.log(newGrades)
+ 
+ //console.log(newAverage)
+ return reportCard;
+}    
 
 
 
